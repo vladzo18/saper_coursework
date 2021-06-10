@@ -1,0 +1,59 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Saper_Coursework">
+    <ResourceDictionary x:Key="btnStatesImg">
+        <Style x:Key="btnStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                                <ThicknessAnimation
+                                    From="0"
+                                    To="3"
+                                    Duration="0:0:0.1"
+                                    Storyboard.TargetProperty="Margin"
+                                    AutoReverse="True"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+            </Trigger>
+        </Style.Triggers>
+        </Style>
+        <Style x:Key="btnStyleOpened" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <ImageBrush ImageSource="img\closed.png" x:Key="btnClosedImg"/>
+        <ImageBrush ImageSource="img\flaged.png" x:Key="btnflagedImg"/>
+        <ImageBrush ImageSource="img\bomb.png" x:Key="btnBombImg"/>
+        <ImageBrush ImageSource="img\bombed.png" x:Key="btnBombedImg"/>
+    </ResourceDictionary>
+    <ResourceDictionary x:Key="btnNumbersImg">
+        <ImageBrush ImageSource="img\zero.png" x:Key="btnZeroImg"/>
+        <ImageBrush ImageSource="img\num1.png" x:Key="btnNum1"/>
+        <ImageBrush ImageSource="img\num2.png" x:Key="btnNum2"/>
+        <ImageBrush ImageSource="img\num3.png" x:Key="btnNum3"/>
+        <ImageBrush ImageSource="img\num4.png" x:Key="btnNum4"/>
+        <ImageBrush ImageSource="img\num5.png" x:Key="btnNum5"/>
+        <ImageBrush ImageSource="img\num6.png" x:Key="btnNum6"/>
+        <ImageBrush ImageSource="img\num7.png" x:Key="btnNum7"/>
+        <ImageBrush ImageSource="img\num8.png" x:Key="btnNum8"/>
+    </ResourceDictionary>
+</ResourceDictionary>

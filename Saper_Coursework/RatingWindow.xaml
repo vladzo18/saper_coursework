@@ -1,0 +1,19 @@
+﻿<Window x:Class="Saper_Coursework.RatingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Saper_Coursework"
+        mc:Ignorable="d"
+        Title="Рейтинг" Height="200" Width="400" ResizeMode="NoResize"
+        Icon=".\img\icon.ico" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Гравець" Width="140" Binding="{Binding Path=userName}" SortMemberPath="Time" CanUserSort="True"/>
+                <DataGridHyperlinkColumn Header="Складність" Width="140" Binding="{Binding Path=Complexity}" CanUserSort="False"/>
+                <DataGridTextColumn Header="Час" Width="100" Binding="{Binding Path=Time}" CanUserSort="False"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

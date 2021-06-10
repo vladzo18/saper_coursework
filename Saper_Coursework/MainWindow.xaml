@@ -1,0 +1,56 @@
+﻿<Window x:Class="Saper_Coursework.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Saper_Coursework"
+        mc:Ignorable="d"
+        Title="Saper 1.0" ResizeMode="NoResize"
+        Loaded="Window_Loaded" Icon=".\img\icon.ico" 
+        Closing="Window_Closing"
+        SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
+    <StackPanel Background="LightGray" x:Name="stackPanel">
+        <Menu Height="20" x:Name="mainMenu">
+            <MenuItem Header="Гра">
+                <MenuItem Header="Нова гра" Height="20" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Пауза" Height="20" Click="MenuItem_Pause"></MenuItem>
+                <MenuItem Header="Завершити гру" Height="20" Click="endGame_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Складність">
+                <MenuItem Header="Новачок" Height="20" IsCheckable="True" 
+                          IsChecked="True" Click="eysyLevelClick" 
+                          x:Name="easyMenuItem"></MenuItem>
+                <MenuItem Header="Любитель" Height="20" IsCheckable="True"
+                          Click="mediumLevelClick" x:Name="mediumMenuItem"></MenuItem>
+                <MenuItem Header="Майстер" Height="20" IsCheckable="True"
+                          Click="hardLevelClick" x:Name="hardMenuItem"></MenuItem>
+                <MenuItem Header="Своя складність" Height="20"
+                          Click="userLevelClick"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Рейтинг" Height="20" Click="openRating"/>
+        </Menu>
+        <Grid Height="30" Width="480" x:Name="infoPanel" 
+              Background="#BEBEBE" HorizontalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Name="labelMinesAmount" FontFamily="Showcard Gothic"
+                   Content="Кількіть мін: " Grid.Column="0"
+                   FontSize="14" FontWeight="Bold" Foreground="#50B2C0"/>
+            <Label Name="labelFlagesAmount" FontFamily="Showcard Gothic"
+                   Content="Кількіть прапорців: " Grid.Column="1"
+                   FontSize="14" FontWeight="Bold" Foreground="#50B2C0"/>
+            <Label Name="labelTime" FontFamily="Showcard Gothic" 
+                   Content="00:00:00" Grid.Column="3"
+                   FontSize="14" FontWeight="Bold" Foreground="#BA1200"/>
+            <Label Name="userNameLabel" FontFamily="Showcard Gothic" 
+                   Content="Гравець: " Grid.Column="2"
+                   FontSize="14" FontWeight="Bold" Foreground="#201E1F"/>
+        </Grid>
+        <Canvas Background="Transparent" x:Name="gameField"/>
+    </StackPanel>
+</Window>
+

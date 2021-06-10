@@ -1,0 +1,39 @@
+﻿<Window x:Class="Saper_Coursework.SetСomplexityWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Saper_Coursework"
+        mc:Ignorable="d"
+        Title="Своя складність" Height="251" Width="300"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize"
+        Icon=".\img\icon.ico">
+    <Grid Background="#F8F1FF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="42"/>
+            <RowDefinition Height="14"/>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="56"/>
+            <RowDefinition Height="55"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Height="30" Grid.Column="0" Grid.Row="0" Margin="0,13" Grid.RowSpan="2">Довжина поля:</Label>
+        <TextBox x:Name="heightBox" Height="30" Grid.Column="1" Grid.Row="0" Margin="0,13" Grid.RowSpan="2"></TextBox>
+
+        <Label Height="30" Grid.Column="0" Grid.Row="2" Margin="0,12,0,13">Ширина поля:</Label>
+        <TextBox x:Name="widthBox" Height="30" Grid.Column="1" Grid.Row="2" Margin="0,12,0,13"></TextBox>
+
+        <Label Height="30" Grid.Column="0" Grid.Row="3" Margin="0,13">Кількість мін:</Label>
+        <TextBox x:Name="minesAmountBox" Height="30" Grid.Column="1" Grid.Row="3" Margin="0,13"></TextBox>
+
+        <Button Content="Почати гру" Click="startClilk" 
+                Grid.Column="0" Grid.Row="4"
+                Width="100" Height="30"/>
+        <Button Content="Відміна" Click="cancelClick" 
+                Grid.Column="1" Grid.Row="4"
+                Width="100" Height="30"/>
+    </Grid>
+</Window>
